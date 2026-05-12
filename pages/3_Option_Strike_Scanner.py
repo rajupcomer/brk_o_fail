@@ -635,8 +635,8 @@ def render_results(rows: list, opt_type: str):
 
     styled = (
         df.style
-        .applymap(style_sig,     subset=["Signal"])
-        .applymap(style_strike,  subset=["Strike"])
+        .map(style_sig,     subset=["Signal"])
+        .map(style_strike,  subset=["Strike"])
         .format(fmt)
         .set_properties(**{"font-size": "12px"})
     )
