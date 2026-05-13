@@ -662,19 +662,91 @@ with st.sidebar:
     )
     mode_cfg = SCAN_MODES[selected_mode_label]
 
-    # ── Watchlist (only for default mode — for FNO modes the full list is used)
+    # ── Watchlist selector
+    st.markdown('<div class="sb-section">WATCHLIST</div>', unsafe_allow_html=True)
+
     if mode_cfg["key"] == "default":
-        st.markdown('<div class="sb-section">WATCHLIST</div>', unsafe_allow_html=True)
-        all_syms = [s for s, _ in WATCHLIST_DEFAULT]
-        selected_symbols = st.multiselect(
-            "Symbols", options=all_syms, default=all_syms,
-            label_visibility="collapsed",
+        # ── 3 universe options for 30-min / 5-min mode
+        universe_choice = st.radio(
+            "Universe",
+            options = [
+                "12 Core Stocks",
+                "All F&O Stocks",
+                "Custom Selection",
+            ],
+            index = 0,
+            key   = "default_universe",
+            label_visibility = "collapsed",
         )
+
+        if universe_choice == "12 Core Stocks":
+            selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
+            st.markdown(f"""
+            <div style="background:#0a0f1a; border:1px solid rgba(0,200,255,0.2);
+                        border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+                <div style="font-size:0.75rem; font-weight:900; color:#1e3050;
+                            text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                    CORE WATCHLIST
+                </div>
+                <div style="font-size:0.95rem; font-weight:800; color:#00c8ff;">
+                    {len(selected_symbols)} stocks
+                </div>
+                <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                    {", ".join(selected_symbols)}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        elif universe_choice == "All F&O Stocks":
+            selected_symbols = [s for s, _ in WATCHLIST_FNO]
+            st.markdown(f"""
+            <div style="background:#0a0f1a; border:1px solid rgba(160,80,255,0.2);
+                        border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+                <div style="font-size:0.75rem; font-weight:900; color:#1e2040;
+                            text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                    FULL F&O UNIVERSE
+                </div>
+                <div style="font-size:0.95rem; font-weight:800; color:#c060ff;">
+                    {len(selected_symbols)} stocks
+                </div>
+                <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                    All NSE F&O eligible stocks scanned
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        else:  # Custom Selection
+            all_syms = [s for s, _ in WATCHLIST_FNO]
+            selected_symbols = st.multiselect(
+                "Pick symbols",
+                options  = all_syms,
+                default  = [s for s, _ in WATCHLIST_DEFAULT],
+                key      = "custom_multiselect",
+                label_visibility = "collapsed",
+            )
+            if selected_symbols:
+                st.markdown(f"""
+                <div style="background:#0a1a12; border:1px solid rgba(0,232,122,0.2);
+                            border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+                    <div style="font-size:0.75rem; font-weight:900; color:#1e4030;
+                                text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                        CUSTOM SELECTION
+                    </div>
+                    <div style="font-size:0.95rem; font-weight:800; color:#00e87a;">
+                        {len(selected_symbols)} stocks selected
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.warning("Select at least one symbol.")
+                selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
+
     else:
+        # Swing / Positional modes always use full F&O list
         selected_symbols = [s for s, _ in WATCHLIST_FNO]
         st.markdown(f"""
         <div style="background:#0a0f1a; border:1px solid #141e30; border-radius:8px;
-                    padding:0.8rem 1rem; margin-top:0.8rem;">
+                    padding:0.8rem 1rem; margin-top:0.4rem;">
             <div style="font-size:0.78rem; font-weight:900; color:#2e4060;
                         text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">
                 F&O UNIVERSE
@@ -768,11 +840,16 @@ with st.sidebar:
                 st.success(f"Removed {remove_sym}.")
 
     # Strategy reminder
-    total_scan_count = (
-        len(selected_symbols) + len(st.session_state.custom_stocks)
-        if mode_cfg["key"] == "default"
-        else len(WATCHLIST_FNO) + len(st.session_state.custom_stocks)
-    )
+    if mode_cfg["key"] == "default":
+        universe_label = (
+            "12 Core Stocks" if universe_choice == "12 Core Stocks"
+            else "All F&O Stocks" if universe_choice == "All F&O Stocks"
+            else "Custom Selection"
+        )
+    else:
+        universe_label = "Full F&O Universe"
+
+    total_scan_count = len(selected_symbols) + len(st.session_state.custom_stocks)
     st.markdown(f"""
     <div style="margin-top:1.5rem; background:#0a0f1a; border:1px solid #141e30;
                 border-radius:8px; padding:1rem; font-size:0.82rem;
@@ -783,7 +860,8 @@ with st.sidebar:
         </div>
         HTF: <span style="color:#00c8ff;">{mode_cfg['htf_label']}</span> (fractals)<br>
         LTF: <span style="color:#00e87a;">{mode_cfg['ltf_label']}</span> (entry signal)<br>
-        Predefined: <span style="color:#ffd600;">{len(mode_cfg['watchlist'])}</span> &nbsp;+&nbsp;
+        Universe: <span style="color:#ffd600;">{universe_label}</span><br>
+        Predefined: <span style="color:#ffd600;">{len(selected_symbols)}</span> &nbsp;+&nbsp;
         Custom: <span style="color:#00e87a;">{len(st.session_state.custom_stocks)}</span><br>
         Total: <span style="color:#00c8ff;">{total_scan_count}</span> stocks
     </div>
@@ -1044,8 +1122,11 @@ with tab_scan:
         tv  = st.session_state.tv
 
         # Build base watchlist for this mode
+        # selected_symbols already contains the correct list based on universe choice
         if mode_cfg["key"] == "default":
-            wl = [(s, e) for s, e in mode_cfg["watchlist"] if s in selected_symbols]
+            # Build exchange lookup from both watchlists combined
+            exch_lookup = {s: e for s, e in WATCHLIST_DEFAULT + WATCHLIST_FNO}
+            wl = [(s, exch_lookup.get(s, "NSE")) for s in selected_symbols]
         else:
             wl = list(mode_cfg["watchlist"])
 
