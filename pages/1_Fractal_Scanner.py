@@ -1094,7 +1094,7 @@ def render_scan_results(results, mode_cfg, show_chart_flag):
                         mode_cfg,
                     )
                     if fig:
-                        st.plotly_chart(fig, use_container_width=True,
+                        st.plotly_chart(fig, width="stretch",
                                         config={"displayModeBar": False},
                                         key=f"chart_{mode_cfg['key']}_{r['symbol']}")
                     else:
