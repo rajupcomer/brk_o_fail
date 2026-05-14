@@ -480,7 +480,19 @@ def check_breakout(symbol, exchange, tv, mode_cfg, strength=2):
         result["candle_high"]   = round(float(latest["high"]),  2)
         result["candle_low"]    = round(float(latest["low"]),   2)
         result["candle_open"]   = round(float(latest["open"]),  2)
-        result["candle_time"]   = str(latest.name)[:16] if latest.name else "--"
+
+        # ── Convert candle timestamp to IST
+        try:
+            import pytz
+            IST = pytz.timezone("Asia/Kolkata")
+            ts  = latest.name
+            if hasattr(ts, "tzinfo") and ts.tzinfo is not None:
+                ts_ist = ts.astimezone(IST)
+            else:
+                ts_ist = pytz.utc.localize(ts).astimezone(IST)
+            result["candle_time"] = ts_ist.strftime("%d-%b  %H:%M") + " IST"
+        except Exception:
+            result["candle_time"] = str(latest.name)[:16] if latest.name else "--"
 
         cl = float(latest["close"])
         hi = float(latest["high"])
