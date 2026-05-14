@@ -345,12 +345,22 @@ SCAN_MODES = {
 
 
 # ─────────────────────────────────────────────
-#  HELPERS
+#  TIMEZONE — single source of truth for IST
 # ─────────────────────────────────────────────
+import pytz
+IST = pytz.timezone("Asia/Kolkata")
+
+def now_ist():
+    """Return current datetime in IST (always correct regardless of server location)."""
+    return datetime.datetime.now(tz=IST)
+
 def is_market_open():
-    now = datetime.datetime.now().time()
-    day = datetime.datetime.now().weekday()
-    return day < 5 and datetime.time(9, 15) <= now <= datetime.time(15, 30)
+    """Check if NSE market is open — uses IST time."""
+    now = now_ist()
+    if now.weekday() >= 5:          # Saturday=5, Sunday=6
+        return False
+    t = now.time()
+    return datetime.time(9, 15) <= t <= datetime.time(15, 30)
 
 
 # ─────────────────────────────────────────────
@@ -483,14 +493,12 @@ def check_breakout(symbol, exchange, tv, mode_cfg, strength=2):
 
         # ── Convert candle timestamp to IST
         try:
-            import pytz
-            IST = pytz.timezone("Asia/Kolkata")
-            ts  = latest.name
+            ts = latest.name
             if hasattr(ts, "tzinfo") and ts.tzinfo is not None:
                 ts_ist = ts.astimezone(IST)
             else:
                 ts_ist = pytz.utc.localize(ts).astimezone(IST)
-            result["candle_time"] = ts_ist.strftime("%d-%b  %H:%M") + " IST"
+            result["candle_time"] = ts_ist.strftime("%d-%b  %H:%M IST")
         except Exception:
             result["candle_time"] = str(latest.name)[:16] if latest.name else "--"
 
@@ -883,7 +891,8 @@ with st.sidebar:
 # ─────────────────────────────────────────────
 #  TOP BANNER
 # ─────────────────────────────────────────────
-now_str  = datetime.datetime.now().strftime("%d %b %Y   %H:%M:%S")
+_now     = now_ist()
+now_str  = _now.strftime("%d %b %Y   %H:%M:%S") + " IST"
 mkt_open = is_market_open()
 mkt_html = ('<span class="live-dot"></span><span class="mkt-open">MARKET OPEN</span>'
             if mkt_open else '<span class="mkt-close">⬛  MARKET CLOSED</span>')
@@ -898,7 +907,7 @@ st.markdown(f"""
     </div>
     <div class="banner-right">
         <div>{mkt_html}</div>
-        <div class="banner-time">{now_str}  IST</div>
+        <div class="banner-time">{now_str}</div>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -1163,7 +1172,7 @@ with tab_scan:
         prog.empty()
 
         st.session_state["results"][mode_key]    = results
-        st.session_state["last_scan"][mode_key]  = datetime.datetime.now().strftime("%H:%M:%S")
+        st.session_state["last_scan"][mode_key]  = now_ist().strftime("%H:%M:%S IST")
         st.session_state["scan_count"][mode_key] = \
             st.session_state["scan_count"].get(mode_key, 0) + 1
 
