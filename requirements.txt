@@ -4,3 +4,4 @@ requests>=2.31.0
 plotly
 pandas-ta-classic
 git+https://github.com/rongardF/tvdatafeed.git
+pytz
