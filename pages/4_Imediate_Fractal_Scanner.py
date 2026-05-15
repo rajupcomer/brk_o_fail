@@ -240,12 +240,13 @@ WATCHLIST_FNO = [
     ("AXISBANK",     "NSE"), ("KOTAKBANK",   "NSE"), ("BANKBARODA",  "NSE"),
     ("FEDERALBNK",   "NSE"), ("IDFCFIRSTB",  "NSE"), ("INDUSINDBK",  "NSE"),
     ("PNB",          "NSE"), ("CANBK",       "NSE"), ("AUBANK",      "NSE"),
-    ("UNIONBANK",    "NSE"),
+    ("UNIONBANK",    "NSE"), ("BANDHANBNK",  "NSE"), 
 
     # Finance / NBFC
     ("BAJFINANCE",   "NSE"), ("BAJAJFINSV",  "NSE"), ("HDFCLIFE",    "NSE"),
     ("SBILIFE",      "NSE"), ("CHOLAFIN",    "NSE"), ("MUTHOOTFIN",  "NSE"),
-    ("LICHSGFIN",    "NSE"),
+    ("LICHSGFIN",    "NSE"), ("IRFC",        "NSE"), ("JIOFIN",      "NSE"),
+    ("SAMMAANCAP",   "NSE"), ("VAIBHAVGBL",  "NSE"), ("MANAPPURAM",  "NSE"),
     # IT
     ("INFY",         "NSE"), ("TCS",         "NSE"), ("WIPRO",       "NSE"),
     ("HCLTECH",      "NSE"), ("TECHM",       "NSE"), ("LTIM",        "NSE"),
@@ -255,11 +256,12 @@ WATCHLIST_FNO = [
     ("HEROMOTOCO",   "NSE"), ("BAJAJ-AUTO",  "NSE"), ("EICHERMOT",   "NSE"),
     ("TVSMOTOR",     "NSE"), ("ASHOKLEY",    "NSE"), ("MOTHERSON",   "NSE"),
     ("SONACOMS",     "NSE"), ("TIINDIA",     "NSE"), ("BOSCHLTD",   "NSE"),
-    ("BHARATFORG",   "NSE"), ("EXIDEIND",    "NSE"),
+    ("BHARATFORG",   "NSE"), ("EXIDEIND",    "NSE"), ("TMCV",       "NSE"),
     # Oil & Gas / Energy
     ("RELIANCE",     "NSE"), ("ONGC",        "NSE"), ("IOC",         "NSE"),
     ("BPCL",         "NSE"), ("GAIL",        "NSE"), ("POWERGRID",   "NSE"),
     ("NTPC",         "NSE"), ("ADANIGREEN",  "NSE"), ("ADANIPORTS",  "NSE"),
+    ("TATAPOWER",    "NSE"),
     # Pharma
     ("SUNPHARMA",    "NSE"), ("DRREDDY",     "NSE"), ("CIPLA",       "NSE"),
     ("DIVISLAB",     "NSE"), ("APOLLOHOSP",  "NSE"), ("AUROPHARMA",  "NSE"),
@@ -278,17 +280,22 @@ WATCHLIST_FNO = [
     # FMCG / Consumer
     ("HINDUNILVR",   "NSE"), ("ITC",         "NSE"), ("NESTLEIND",   "NSE"),
     ("BRITANNIA",    "NSE"), ("DABUR",       "NSE"), ("MARICO",      "NSE"),
-    ("EMAMILTD",     "NSE"), ("COLPAL",      "NSE"), ("GODREJCP",      "NSE"),
-    ("PATANJALI",    "NSE"), ("RADICO",      "NSE"), ("TATACONSUM",      "NSE"),
-    ("UBL",          "NSE"), ("UNITDSPR",    "NSE"),
+    ("EMAMILTD",     "NSE"), ("COLPAL",      "NSE"), ("GODREJCP",    "NSE"),
+    ("PATANJALI",    "NSE"), ("RADICO",      "NSE"), ("TATACONSUM",  "NSE"),
+    ("UBL",          "NSE"), ("UNITDSPR",    "NSE"), ("JYOTHYLAB",   "NSE"),
+    ("CROMPTON",     "NSE"),
     # Infra / Cement
     ("LT",           "NSE"), ("ULTRACEMCO",  "NSE"), ("GRASIM",      "NSE"),
     ("SHREECEM",     "NSE"), ("ACC",         "NSE"), ("AMBUJACEM",   "NSE"),
+    ("NUVOCO",       "NSE"), ("BEML",        "NSE"), ("RITES",       "NSE"),
+    ("NCC",          "NSE"),
     # Others
     ("TITAN",       "NSE"), ("ASIANPAINT",  "NSE"), ("DMART",       "NSE"),
     ("UPL",         "NSE"), ("PIIND",       "NSE"), ("PRESTIGE",    "NSE"),
-    ("DLF",         "NSE"), ("ANANTRAJ",    "NSE"), ("GODREJPROP",   "NSE"),
-    ("OBEROIRLTY",  "NSE"), ("SOBHA",       "NSE"),
+    ("DLF",         "NSE"), ("ANANTRAJ",    "NSE"), ("GODREJPROP",  "NSE"),
+    ("OBEROIRLTY",  "NSE"), ("SOBHA",       "NSE"), ("CHAMBLFERT",  "NSE"),
+    ("ZEEL",        "NSE"), ("ITCHOTELS",   "NSE"), ("IRCTC",       "NSE"),
+    ("IEx",         "NSE"), ("PAYTM",       "NSE"), ("UGROCAP",     "NSE"),
 ]
 
 TV_CHART_URLS = {
