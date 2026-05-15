@@ -364,6 +364,75 @@ def is_market_open():
 
 
 # ─────────────────────────────────────────────
+#  ROBUST DATA FETCHER
+#  Handles timeout, bad symbol, network errors
+#  Retries with exponential backoff
+# ─────────────────────────────────────────────
+
+MAX_RETRIES   = 3
+RETRY_DELAY   = 2.0
+RETRY_BACKOFF = 1.5
+
+RETRY_ERRORS = (
+    "timed out", "read operation timed out", "connection", "timeout",
+    "remote end closed", "broken pipe", "reset by peer",
+    "temporarily unavailable", "socket", "ssl", "502", "503", "504",
+)
+SKIP_ERRORS = (
+    "no data", "no history", "invalid symbol", "not found",
+    "unauthorized", "please check the exchange and symbol",
+)
+
+
+def safe_get_hist(tv, symbol, exchange, interval, n_bars, label="data"):
+    """
+    Robust wrapper around tv.get_hist() with retry + exponential backoff.
+
+    Returns:
+        (df, None)       — on success, df has lowercased OHLCV columns
+        (None, err_msg)  — on failure after all retries
+    """
+    last_error = None
+    delay      = RETRY_DELAY
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            df = tv.get_hist(
+                symbol   = symbol,
+                exchange = exchange,
+                interval = interval,
+                n_bars   = n_bars,
+            )
+
+            if df is None or df.empty:
+                return None, f"No {label} — check symbol/exchange ({symbol}:{exchange})"
+
+            df.columns = df.columns.str.lower()
+            required   = {"open", "high", "low", "close"}
+            missing    = required - set(df.columns)
+            if missing:
+                return None, f"Missing columns {missing} in {label} for {symbol}"
+
+            return df[["open", "high", "low", "close", "volume"]].copy(), None
+
+        except Exception as e:
+            err_lower  = str(e).lower()
+            last_error = str(e)
+
+            # Bad symbol — no point retrying
+            if any(s in err_lower for s in SKIP_ERRORS):
+                return None, f"Symbol error ({symbol}:{exchange}) — {e}"
+
+            # Transient error — retry with backoff
+            if attempt < MAX_RETRIES:
+                time.sleep(delay)
+                delay *= RETRY_BACKOFF
+                continue
+
+    return None, f"Failed after {MAX_RETRIES} retries ({symbol}) — {last_error}"
+
+
+# ─────────────────────────────────────────────
 #  CORE LOGIC  — unchanged from fractal_scanner.py
 #  Same functions, now parameterised with intervals
 # ─────────────────────────────────────────────
