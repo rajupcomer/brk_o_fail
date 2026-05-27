@@ -272,7 +272,7 @@ WATCHLIST_FNO = [
     ("TORNTPHARM",   "NSE"), ("WOCKPHARMA",  "NSE"), ("ZYDUSLIFE",     "NSE"),
 
     # Metals / Mining
-    ("TATASTEEL",    "NSE"), ("HINDALCO",    "NSE"), ("JSWSTEEL",    "NSE"),
+    ("TATASTEEL",    "NSE"), ("HINDALCO",    "NSE"),
     ("COALINDIA",    "NSE"), ("VEDL",        "NSE"), ("WELCORP",     "NSE"),
     ("APLAPOLLO",    "NSE"), ("ADANIENT",    "NSE"), ("HINDCOPPER",  "NSE"),
     ("HINDZINC",     "NSE"), ("JSWSTEEL",    "NSE"), ("JINDALSTEL",  "NSE"),
