@@ -298,11 +298,93 @@ WATCHLIST_FNO = [
     ("IEx",         "NSE"), ("PAYTM",       "NSE"), ("UGROCAP",     "NSE"),
 ]
 
+# ── Nifty Midcap 100  (source: NSE marketwatch 26-May-2026)
+WATCHLIST_MIDCAP100 = [
+    ("ATGL",        "NSE"), ("POWERINDIA",  "NSE"), ("BSE",         "NSE"),
+    ("IDEA",        "NSE"), ("SUZLON",      "NSE"), ("SAIL",        "NSE"),
+    ("MCX",         "NSE"), ("RVNL",        "NSE"), ("TATACOMM",    "NSE"),
+    ("WAAREEENER",  "NSE"), ("NAUKRI",      "NSE"), ("GROWW",       "NSE"),
+    ("INDUSTOWER",  "NSE"), ("CONCOR",      "NSE"), ("POLYCAB",     "NSE"),
+    ("LENSKART",    "NSE"), ("BHEL",        "NSE"), ("ASHOKLEY",    "NSE"),
+    ("PAYTM",       "NSE"), ("PREMIERENE",  "NSE"), ("DIXON",       "NSE"),
+    ("JSWENERGY",   "NSE"), ("FEDERALBNK",  "NSE"), ("NATIONALUM",  "NSE"),
+    ("BIOCON",      "NSE"), ("YESBANK",     "NSE"), ("AUBANK",      "NSE"),
+    ("EXIDEIND",    "NSE"), ("APLAPOLLO",   "NSE"), ("OFSS",        "NSE"),
+    ("COFORGE",     "NSE"), ("LAURUSLABS",  "NSE"), ("GVT&D",       "NSE"),
+    ("PERSISTENT",  "NSE"), ("INDUSINDBK",  "NSE"), ("SWIGGY",      "NSE"),
+    ("INDIANB",     "NSE"), ("HEROMOTOCO",  "NSE"), ("LUPIN",       "NSE"),
+    ("NYKAA",       "NSE"), ("BHARATFORG",  "NSE"), ("ABCAPITAL",   "NSE"),
+    ("SRF",         "NSE"), ("COLPAL",      "NSE"), ("JUBLFOOD",    "NSE"),
+    ("BANKINDIA",   "NSE"), ("MARICO",      "NSE"), ("KPITTECH",    "NSE"),
+    ("HINDPETRO",   "NSE"), ("NMDC",        "NSE"), ("MFSL",        "NSE"),
+    ("COCHINSHIP",  "NSE"), ("OIL",         "NSE"), ("AUROPHARMA",  "NSE"),
+    ("IDFCFIRSTB",  "NSE"), ("KEI",         "NSE"), ("POLICYBZR",   "NSE"),
+    ("TATAINVEST",  "NSE"), ("MOTILALOFS",  "NSE"), ("UPL",         "NSE"),
+    ("LTF",         "NSE"), ("GLENMARK",    "NSE"), ("MANKIND",     "NSE"),
+    ("KALYANKJIL",  "NSE"), ("GODFRYPHLP",  "NSE"), ("ASTRAL",      "NSE"),
+    ("GMRAIRPORT",  "NSE"), ("BDL",         "NSE"), ("PRESTIGE",    "NSE"),
+    ("FORTIS",      "NSE"), ("BLUESTARCO",  "NSE"), ("360ONE",      "NSE"),
+    ("SBICARD",     "NSE"), ("TATAELXSI",   "NSE"), ("PATANJALI",   "NSE"),
+    ("NHPC",        "NSE"), ("ICICIAMC",    "NSE"), ("VOLTAS",      "NSE"),
+    ("MRF",         "NSE"), ("GODREJPROP",  "NSE"), ("IREDA",       "NSE"),
+    ("RADICO",      "NSE"), ("MPHASIS",     "NSE"), ("IRCTC",       "NSE"),
+    ("M&MFIN",      "NSE"), ("VMM",         "NSE"), ("OBEROIRLTY",  "NSE"),
+    ("HAVELLS",     "NSE"), ("LGEINDIA",    "NSE"), ("ICICIGI",     "NSE"),
+    ("DABUR",       "NSE"), ("TIINDIA",     "NSE"), ("PAGEIND",     "NSE"),
+    ("PIIND",       "NSE"), ("PHOENIXLTD",  "NSE"), ("LICHSGFIN",   "NSE"),
+    ("ALKEM",       "NSE"), ("SUPREMEIND",  "NSE"), ("COROMANDEL",  "NSE"),
+    ("HUDCO",       "NSE"),
+]
+
+# ── Nifty Smallcap 100  (source: NSE marketwatch 26-May-2026)
+WATCHLIST_SMALLCAP100 = [
+    ("PINELABS",    "NSE"), ("KAYNES",      "NSE"), ("ATHERENERG",  "NSE"),
+    ("GMDCLTD",     "NSE"), ("ARE&M",       "NSE"), ("WOCKPHARMA",  "NSE"),
+    ("HINDCOPPER",  "NSE"), ("HSCL",        "NSE"), ("BANDHANBNK",  "NSE"),
+    ("NETWEB",      "NSE"), ("NBCC",        "NSE"), ("HBLENGINE",   "NSE"),
+    ("OLAELEC",     "NSE"), ("ANGELONE",    "NSE"), ("AMBER",       "NSE"),
+    ("DATAPATTNS",  "NSE"), ("TATATECH",    "NSE"), ("TATACHEM",    "NSE"),
+    ("GLAND",       "NSE"), ("GRSE",        "NSE"), ("IIFL",        "NSE"),
+    ("CDSL",        "NSE"), ("IFCI",        "NSE"), ("IGL",         "NSE"),
+    ("FORCEMOT",    "NSE"), ("NAVINFLUOR",  "NSE"), ("ITI",         "NSE"),
+    ("CHAMBLFERT",  "NSE"), ("MEESHO",      "NSE"), ("INOXWIND",    "NSE"),
+    ("DELHIVERY",   "NSE"), ("SONACOMS",    "NSE"), ("SAILIFE",     "NSE"),
+    ("AFCONS",      "NSE"), ("KFINTECH",    "NSE"), ("JSWCEMENT",   "NSE"),
+    ("GESHIP",      "NSE"), ("RBLBANK",     "NSE"), ("PGEL",        "NSE"),
+    ("FSL",         "NSE"), ("NEULANDLAB",  "NSE"), ("RPOWER",      "NSE"),
+    ("NH",          "NSE"), ("ANANDRATHI",  "NSE"), ("CAMS",        "NSE"),
+    ("NUVAMA",      "NSE"), ("LALPATHLAB",  "NSE"), ("PNBHOUSING",  "NSE"),
+    ("TRITURBINE",  "NSE"), ("WELCORP",     "NSE"), ("PIRAMALFIN",  "NSE"),
+    ("REDINGTON",   "NSE"), ("MANAPPURAM",  "NSE"), ("GPIL",        "NSE"),
+    ("SARDAEN",     "NSE"), ("AARTIIND",    "NSE"), ("CGCL",        "NSE"),
+    ("ANANTRAJ",    "NSE"), ("AFFLE",       "NSE"), ("POONAWALLA",  "NSE"),
+    ("URBANCO",     "NSE"), ("DEEPAKFERT",  "NSE"), ("RAMCOCEM",    "NSE"),
+    ("CUB",         "NSE"), ("CESC",        "NSE"), ("JYOTICNC",    "NSE"),
+    ("KEC",         "NSE"), ("CROMPTON",    "NSE"), ("PWL",         "NSE"),
+    ("BLS",         "NSE"), ("SAGILITY",    "NSE"), ("PPLPHARMA",   "NSE"),
+    ("NATCOPHARM",  "NSE"), ("ASTERDM",     "NSE"), ("BEML",        "NSE"),
+    ("IRCON",       "NSE"), ("KARURVYSYA",  "NSE"), ("FIRSTCRY",    "NSE"),
+    ("JMFINANCIL",  "NSE"), ("ABREL",       "NSE"), ("COHANCE",     "NSE"),
+    ("TENNIND",     "NSE"), ("STARHEALTH",  "NSE"), ("MRPL",        "NSE"),
+    ("IDBI",        "NSE"), ("AEGISLOG",    "NSE"), ("JBMA",        "NSE"),
+    ("IKS",         "NSE"), ("FIVESTAR",    "NSE"), ("SIGNATURE",   "NSE"),
+    ("CASTROLIND",  "NSE"), ("SYNGENE",     "NSE"), ("WHIRLPOOL",   "NSE"),
+    ("SWANCORP",    "NSE"), ("CHOLAHLDNG",  "NSE"), ("ZENSARTECH",  "NSE"),
+    ("CREDITACC",   "NSE"), ("APTUS",       "NSE"), ("BRIGADE",     "NSE"),
+    ("DEVYANI",     "NSE"),
+]
+
 TV_CHART_URLS = {
     "5min"  : "https://www.tradingview.com/chart/?symbol=NSE%3A{symbol}&interval=5",
     "1hour" : "https://www.tradingview.com/chart/?symbol=NSE%3A{symbol}&interval=60",
     "1day"  : "https://www.tradingview.com/chart/?symbol=NSE%3A{symbol}&interval=D",
 }
+
+# ── Combined exchange lookup (used by wl builder)
+ALL_WATCHLISTS_COMBINED = (
+    WATCHLIST_DEFAULT + WATCHLIST_FNO +
+    WATCHLIST_MIDCAP100 + WATCHLIST_SMALLCAP100
+)
 
 # ── Scan mode definitions
 SCAN_MODES = {
@@ -759,13 +841,14 @@ def build_chart(symbol, exchange, tv, u_highs, u_lows, mode_cfg):
 #  SESSION STATE  INIT
 # ─────────────────────────────────────────────
 defaults = {
-    "tv"           : None,
-    "connected"    : False,
-    "login_info"   : "",
-    "results"      : {},
-    "last_scan"    : {},
-    "scan_count"   : {},
-    "custom_stocks": [],
+    "tv"              : None,
+    "connected"       : False,
+    "login_info"      : "",
+    "results"         : {},
+    "last_scan"       : {},
+    "scan_count"      : {},
+    "custom_stocks"   : [],
+    "selected_symbols": [s for s, _ in WATCHLIST_DEFAULT],  # persists across reruns
 }
 for k, v in defaults.items():
     if k not in st.session_state:
@@ -905,100 +988,127 @@ with st.sidebar:
     # ── Watchlist selector
     st.markdown('<div class="sb-section">WATCHLIST</div>', unsafe_allow_html=True)
 
-    if mode_cfg["key"] == "default":
-        # ── 3 universe options for 30-min / 5-min mode
-        universe_choice = st.radio(
-            "Universe",
-            options = [
-                "12 Core Stocks",
-                "All F&O Stocks",
-                "Custom Selection",
-            ],
-            index = 0,
-            key   = "default_universe",
-            label_visibility = "collapsed",
-        )
+    universe_choice = st.radio(
+        "Universe",
+        options = [
+            "12 Core Stocks",
+            "All F&O Stocks",
+            "Nifty Midcap 100",
+            "Nifty Smallcap 100",
+            "Custom Selection",
+        ],
+        index = 0,
+        key   = "default_universe",
+        label_visibility = "collapsed",
+    )
 
-        if universe_choice == "12 Core Stocks":
-            selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
-            st.markdown(f"""
-            <div style="background:#0a0f1a; border:1px solid rgba(0,200,255,0.2);
-                        border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
-                <div style="font-size:0.75rem; font-weight:900; color:#1e3050;
-                            text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
-                    CORE WATCHLIST
-                </div>
-                <div style="font-size:0.95rem; font-weight:800; color:#00c8ff;">
-                    {len(selected_symbols)} stocks
-                </div>
-                <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
-                    {", ".join(selected_symbols)}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-        elif universe_choice == "All F&O Stocks":
-            selected_symbols = [s for s, _ in WATCHLIST_FNO]
-            st.markdown(f"""
-            <div style="background:#0a0f1a; border:1px solid rgba(160,80,255,0.2);
-                        border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
-                <div style="font-size:0.75rem; font-weight:900; color:#1e2040;
-                            text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
-                    FULL F&O UNIVERSE
-                </div>
-                <div style="font-size:0.95rem; font-weight:800; color:#c060ff;">
-                    {len(selected_symbols)} stocks
-                </div>
-                <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
-                    All NSE F&O eligible stocks scanned
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-        else:  # Custom Selection
-            all_syms = [s for s, _ in WATCHLIST_FNO]
-            selected_symbols = st.multiselect(
-                "Pick symbols",
-                options  = all_syms,
-                default  = [s for s, _ in WATCHLIST_DEFAULT],
-                key      = "custom_multiselect",
-                label_visibility = "collapsed",
-            )
-            if selected_symbols:
-                st.markdown(f"""
-                <div style="background:#0a1a12; border:1px solid rgba(0,232,122,0.2);
-                            border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
-                    <div style="font-size:0.75rem; font-weight:900; color:#1e4030;
-                                text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
-                        CUSTOM SELECTION
-                    </div>
-                    <div style="font-size:0.95rem; font-weight:800; color:#00e87a;">
-                        {len(selected_symbols)} stocks selected
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-            else:
-                st.warning("Select at least one symbol.")
-                selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
-
-    else:
-        # Swing / Positional modes always use full F&O list
-        selected_symbols = [s for s, _ in WATCHLIST_FNO]
+    if universe_choice == "12 Core Stocks":
+        selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
+        st.session_state["selected_symbols"] = selected_symbols
         st.markdown(f"""
-        <div style="background:#0a0f1a; border:1px solid #141e30; border-radius:8px;
-                    padding:0.8rem 1rem; margin-top:0.4rem;">
-            <div style="font-size:0.78rem; font-weight:900; color:#2e4060;
-                        text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">
-                F&O UNIVERSE
+        <div style="background:#0a0f1a; border:1px solid rgba(0,200,255,0.2);
+                    border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+            <div style="font-size:0.75rem; font-weight:900; color:#1e3050;
+                        text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                CORE WATCHLIST
             </div>
-            <div style="font-size:1rem; font-weight:800; color:#c060ff;">
-                {len(WATCHLIST_FNO)} Stocks
+            <div style="font-size:0.95rem; font-weight:800; color:#00c8ff;">
+                {len(selected_symbols)} stocks
             </div>
-            <div style="font-size:0.78rem; font-weight:700; color:#1e2e45; margin-top:2px;">
-                Full F&O watchlist — all scanned
+            <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                {", ".join(selected_symbols)}
             </div>
         </div>
         """, unsafe_allow_html=True)
+
+    elif universe_choice == "All F&O Stocks":
+        selected_symbols = [s for s, _ in WATCHLIST_FNO]
+        st.session_state["selected_symbols"] = selected_symbols
+        st.markdown(f"""
+        <div style="background:#0a0f1a; border:1px solid rgba(160,80,255,0.2);
+                    border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+            <div style="font-size:0.75rem; font-weight:900; color:#1e2040;
+                        text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                FULL F&O UNIVERSE
+            </div>
+            <div style="font-size:0.95rem; font-weight:800; color:#c060ff;">
+                {len(selected_symbols)} stocks
+            </div>
+            <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                All NSE F&O eligible stocks
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif universe_choice == "Nifty Midcap 100":
+        selected_symbols = [s for s, _ in WATCHLIST_MIDCAP100]
+        st.session_state["selected_symbols"] = selected_symbols
+        st.markdown(f"""
+        <div style="background:#0a0f1a; border:1px solid rgba(255,160,30,0.2);
+                    border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+            <div style="font-size:0.75rem; font-weight:900; color:#2a1a00;
+                        text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                NIFTY MIDCAP 100
+            </div>
+            <div style="font-size:0.95rem; font-weight:800; color:#ffa020;">
+                {len(selected_symbols)} stocks
+            </div>
+            <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                NSE Nifty Midcap 100 index constituents
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif universe_choice == "Nifty Smallcap 100":
+        selected_symbols = [s for s, _ in WATCHLIST_SMALLCAP100]
+        st.session_state["selected_symbols"] = selected_symbols
+        st.markdown(f"""
+        <div style="background:#0a0f1a; border:1px solid rgba(0,232,122,0.15);
+                    border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+            <div style="font-size:0.75rem; font-weight:900; color:#1e4030;
+                        text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                NIFTY SMALLCAP 100
+            </div>
+            <div style="font-size:0.95rem; font-weight:800; color:#00e87a;">
+                {len(selected_symbols)} stocks
+            </div>
+            <div style="font-size:0.75rem; font-weight:700; color:#1e2e45; margin-top:2px;">
+                NSE Nifty Smallcap 100 index constituents
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    else:  # Custom Selection
+        all_syms = sorted(set(
+            [s for s, _ in WATCHLIST_FNO] +
+            [s for s, _ in WATCHLIST_MIDCAP100] +
+            [s for s, _ in WATCHLIST_SMALLCAP100]
+        ))
+        selected_symbols = st.multiselect(
+            "Pick symbols",
+            options  = all_syms,
+            default  = [s for s, _ in WATCHLIST_DEFAULT],
+            key      = "custom_multiselect",
+            label_visibility = "collapsed",
+        )
+        if selected_symbols:
+            st.session_state["selected_symbols"] = selected_symbols
+            st.markdown(f"""
+            <div style="background:#0a1a12; border:1px solid rgba(0,232,122,0.2);
+                        border-radius:8px; padding:0.7rem 1rem; margin-top:0.4rem;">
+                <div style="font-size:0.75rem; font-weight:900; color:#1e4030;
+                            text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">
+                    CUSTOM SELECTION
+                </div>
+                <div style="font-size:0.95rem; font-weight:800; color:#00e87a;">
+                    {len(selected_symbols)} stocks selected
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.warning("Select at least one symbol.")
+            selected_symbols = [s for s, _ in WATCHLIST_DEFAULT]
+            st.session_state["selected_symbols"] = selected_symbols
 
     # ── Strategy params
     st.markdown('<div class="sb-section">FRACTAL SETTINGS</div>', unsafe_allow_html=True)
@@ -1109,15 +1219,7 @@ with st.sidebar:
                 st.success(f"Removed {remove_sym}.")
 
     # Strategy reminder
-    if mode_cfg["key"] == "default":
-        universe_label = (
-            "12 Core Stocks" if universe_choice == "12 Core Stocks"
-            else "All F&O Stocks" if universe_choice == "All F&O Stocks"
-            else "Custom Selection"
-        )
-    else:
-        universe_label = "Full F&O Universe"
-
+    universe_label = universe_choice
     total_scan_count = len(selected_symbols) + len(st.session_state.custom_stocks)
     st.markdown(f"""
     <div style="margin-top:1.5rem; background:#0a0f1a; border:1px solid #141e30;
@@ -1403,14 +1505,10 @@ with tab_scan:
     if scan_btn:
         tv  = st.session_state.tv
 
-        # Build base watchlist for this mode
-        # selected_symbols already contains the correct list based on universe choice
-        if mode_cfg["key"] == "default":
-            # Build exchange lookup from both watchlists combined
-            exch_lookup = {s: e for s, e in WATCHLIST_DEFAULT + WATCHLIST_FNO}
-            wl = [(s, exch_lookup.get(s, "NSE")) for s in selected_symbols]
-        else:
-            wl = list(mode_cfg["watchlist"])
+        # Build base watchlist — read from session_state so it survives Streamlit rerun
+        scan_symbols = st.session_state.get("selected_symbols", [s for s, _ in WATCHLIST_DEFAULT])
+        exch_lookup  = {s: e for s, e in ALL_WATCHLISTS_COMBINED}
+        wl = [(s, exch_lookup.get(s, "NSE")) for s in scan_symbols]
 
         # Merge custom stocks (avoid duplicates)
         existing_syms = {s for s, _ in wl}
